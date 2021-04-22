@@ -1,0 +1,97 @@
+#upper-jumbotron {
+    img {
+        max-width: 100%;
+    }
+}
+
+#covid-banner {
+    padding: 2%;
+    margin-top: 40px;
+    height: 90px;
+    background-color: #f3f5f7;
+    color: black;
+    img {
+        width: 4%;
+        margin-right: 15px;
+    }
+}
+
+.round-border {
+    border-radius: 0 5% 5% 5%;
+}
+
+#btn-last {
+    margin: 50px auto;
+    a {
+        background-color: #07477B;
+        color: #FFF;
+        border-radius: 5px;
+        border: none;
+        box-shadow: inset 0 0 0 1px #07477B, 0 0 1px rgba(0, 0, 0, 0);
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        overflow: hidden;
+        display: block;
+        width: 100%;
+        padding: 15px 10px;
+    }
+}
+
+.btn-white {
+    width: 100%;
+    a {
+        border: solid $txtcolor 1px;
+        color: $triblue;
+        text-align: center;
+        padding: 10px 10px;
+        transition: all ease .5s;
+        border-radius: 5px;
+        font-size: 1.3rem;
+        display: block;
+        font-weight: bolder;
+        &:hover {
+            background-color: $triblue;
+            color: $txtcolor;
+            text-decoration: none;
+        }
+    }
+}
+
+section {
+    padding-top: 75px;
+}
+
+.card-num {
+    background-color: $triblue;
+    padding: 8px 20px;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 5px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.4;
+    margin-top: 15px;
+}
+
+.bg-grey {
+    background-color: #f3f5f7;
+}
+
+.card-body {
+    img {
+        width: 30%;
+    }
+    h1 {
+        color: $triblue;
+        font-weight: bolder;
+    }
+}
