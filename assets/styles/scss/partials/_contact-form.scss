@@ -1,0 +1,45 @@
+#form {
+    width: 80%;
+    text-align: center;
+    background-color: $triblue;
+    margin: 0 auto;
+    color: #fff;
+    padding-bottom: 10%;
+    form {
+        @include flex(column, space-between, center);
+        input[type=submit] {
+            border-radius: 0 15px 15px 15px;
+            border: none;
+            background-color: #07477b;
+            color: #fff;
+            padding: 10px 15px;
+            margin-bottom: 10%;
+        }
+        label {
+            font-size: 12px;
+            line-height: 25px;
+        }
+    }
+}
+
+#text-form-container,
+#mail-form-container {
+    padding: 0;
+    margin: 0 auto;
+    border: none;
+    input,
+    textarea {
+        border: none;
+        width: 100%;
+    }
+    input {
+        border-top: solid 1px lightgrey;
+        border-radius: 0 0 15px 15px;
+        padding: 12px;
+        margin-bottom: 10%;
+    }
+    textarea {
+        border-radius: 0 15px 0 0;
+        padding: 12px;
+    }
+}

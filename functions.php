@@ -47,12 +47,8 @@ require_once(get_template_directory().'/functions/translation/translation.php');
 // require_once(get_template_directory().'/functions/admin.php'); 
 
 function script_custom(){
-    wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery-slim', "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js", '', '', true );
-    wp_enqueue_script( 'jquery-slim' );
     wp_register_script( 'popper',  'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', '', '', true );
     wp_enqueue_script( 'popper' );
-    wp_register_script( 'bootstrap', 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js', '', '', true );
     wp_enqueue_script( 'bootstrap' );  
 }
 
@@ -62,5 +58,54 @@ function custom_style(){
     wp_enqueue_style( 'font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', array() ); 
 }
 
+function get_reading_time($txt){
+    
+    $length = strlen($txt);
+            if($length > 500 && $length < 1000 ){
+                return '3 minuti';
+            }elseif ($length < 500){
+                return '2 minuti';
+            }else{
+                return '5 minuti';
+            };
+}
+
 add_action('wp_enqueue_scripts' , 'script_custom' , 10);
 add_action('wp_enqueue_scripts' , 'custom_style');
+
+function api_function_load_more($data){
+    $page = $data['page'];
+    $args = array(
+        'post_type' => 'news',
+        'posts_per_page' => '3',
+        'paged' => $page
+    );
+    $news = new WP_Query($args);
+       
+    foreach($news -> posts as $post){
+        $post -> category = get_the_category($post -> ID);
+        $post -> imageUrl = get_the_post_thumbnail_url($post -> ID , 'full');
+    };
+    return $news -> posts;
+};
+
+add_action('rest_api_init'  , function(){
+    register_rest_route('/wp/v2' , '/load-more/(?P<page>\d+)' ,  array(
+        'methods' => 'GET',
+        'callback' => 'api_function_load_more'
+    ));
+});
+
+function mail_sender(WP_REST_Request $request){
+    $mymail = 'slaigox@gmail.com';
+    $ext = mail($mymail ,$request['mail_from'] ,$request['mail_body']);
+    return $ext;
+};
+
+
+add_action('rest_api_init' , function(){
+    register_rest_route('/wp/v2' , '/send-mail' , array(
+      'methods' => 'POST',
+      'callback' => 'mail_sender'  
+    ));
+});

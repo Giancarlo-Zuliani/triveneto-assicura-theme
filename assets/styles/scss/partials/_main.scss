@@ -90,8 +90,46 @@ section {
     img {
         width: 30%;
     }
-    h1 {
-        color: $triblue;
-        font-weight: bolder;
+}
+
+#index-banner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    z-index: 1045;
+    background-color: red;
+}
+
+#modal-close-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 9;
+}
+
+.subtitle {
+    color: #07477B;
+    font-size: 18px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.title-1 {
+    font-size: 45px;
+}
+
+.btn-triveneto {
+    color: #FFF;
+    background-color: #06518C;
+    box-shadow: inset 0 0 0 1px #06518C, 0 0 1px rgba(0, 0, 0, 0);
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    &:hover {
+        text-decoration: none;
+        color: #fff;
     }
 }

@@ -3,9 +3,9 @@
             <p class="title title-5 subtitle">TRIVENETO ASSICURA</p>
 		    <h1 class="title title-1">Proteggi ciò che ti sta a cuore</h1>
 		    <p>Affianchiamo le persone per renderle consapevoli delle loro responsabilità</p>
-		    <p>
+		    <p style="margin-top:25px;">
                 <a href="#info-form-container" class="btn-triveneto internal-anchor">
-                <i class="icon-mobile"></i> Richiedi informazioni</a>
+                <i class="fas fa-mobile-alt"></i> Richiedi informazioni</a>
 		    </p>
         </div>
   

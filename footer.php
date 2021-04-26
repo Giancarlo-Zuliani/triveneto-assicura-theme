@@ -97,5 +97,5 @@
 </footer>
 
 	</body>
-	
+	<script src="<?php echo get_template_directory_uri() . '/assets/scripts/js/script.js'?>" defer></script>
 </html> 

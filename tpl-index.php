@@ -7,9 +7,42 @@ get_header();
 
 <main class="container-fluid ">
     <?php get_template_part('parts/upper-jumbotron')?>
-    
-
 </main>
+
+<div class="modal fade" id="popup-closure" tabindex="-1" role="dialog" aria-labelledby="popup-closure" aria-hidden="true" data-backdrop="static" data-keyboard="false" data-show="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-0">
+        <div class="container-fluid">
+					<div class="row position-relative p-0">
+						<button id="modal-close-btn" type="button" class="text-right close close-button w-100" data-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times"></i>
+						</button>
+						<div class="col-12 col-lg-6 p-0">
+							<img src="https://www.trivenetoassicura.it/wp-content/themes/triveneto-theme/media/home/popup-chiusura-2.jpg" class="img-fluid d-inline">
+						</div>
+						<div class="col-12 col-lg-6 pad-popup">
+								<h1 class="bg-blue p-3">AVVISO ALLA CLIENTELA</h1>
+								<p class="mt-3">
+									Informiamo tutti i nostri clienti che da novembre i nostri uffici saranno <strong>CHIUSI</strong> il <strong>MERCOLEDÌ POMERIGGIO</strong>.
+								</p>
+								<p>
+									Per qualsiasi informazione:<br>
+									Sede di Mareno: 0438.492640<br>
+									Sede di Codognè: 0438.793082 
+								</p>
+								<p>
+									Grazie per la collaborazione,<br>
+									Lo staff Triveneto Assicura
+								</p>
+						</div>
+					</div>
+				</div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section id="index-chi-siamo" class="container scrvl1">
     <div class="row">
         <div class="col-12 col-lg-5 offset-lg-1">
@@ -38,7 +71,7 @@ get_header();
                 <img src="<?php echo wp_get_upload_dir()['baseurl'] . '/salvagente.webp'?>" alt="">
             </div>
         </div>
-        <div class="col-lg-6 col-12 my-5">
+        <div class="col-lg-6 col-12 my-5 m-auto">
             <img class="img-fluid" src="<?php echo wp_get_upload_dir()['baseurl'] .'/analisi-futuro.webp'; ?>" alt="">
         </div>
         <div class="col-12">
@@ -81,7 +114,7 @@ get_header();
 </section>
 <section class="container scrvl2">
     <div class="row">
-        <div class="col-12 col-lg-8 text-center">
+        <div class="m-auto col-12 col-lg-8 text-center">
             <h3>SERVIZI ASSICURATIVI</h3>
             <h2>Generare consapevolezza, per un futuro più sicuro</h2>
             <p>La nostra realtà assicurativa è specializzata in servizi rivolti a privati, imprese e liberi professionisti.</p>
@@ -92,7 +125,7 @@ get_header();
         </div>
     </div>
     <div class="row justify-content-between text-center">
-        <div class="card-body col-12 col-lg-6 col-xl-5">
+        <div class="card-body col-12 col-lg-6 col-xl-5 m-auto">
             <img src="<?php echo wp_get_upload_dir()['baseurl'] . '/icona-privati.svg' ?>" alt="">
             <h1>PRIVATI</h1>
             <p class="card-text text-center">Accompagnare le persone nel loro percorso, consigliando loro le soluzioni migliori per un futuro più sicuro</p>
@@ -156,6 +189,9 @@ get_header();
 
             <?php endwhile; ?>
     </div>
+</section>
+<section id="form" class="scrvl2 mt-4 round-border">
+    <?php get_template_part('parts/contact-form')?>
 </section>
 
 <?php get_footer();?>

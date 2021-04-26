@@ -1,0 +1,28 @@
+    #console {
+        position: relative;
+        #filtercontainer {
+            opacity: 0;
+            padding: 10px;
+            position: absolute;
+            width: 340px;
+            left: calc(100% - 340px);
+            z-index: 999;
+            background-color: #fff;
+            box-shadow: 5px 5px 25px #00000029;
+            @include flex(column, center, stretch);
+            display: none;
+            button {
+                margin: 5%;
+                border: solid #8a949b 1px;
+                border-radius: 5px;
+                padding: 10px 20px;
+                line-height: 20px;
+                background-color: #fff;
+                &.selected {
+                    color: $triblue;
+                    border: solid 1px $triblue;
+                    font-size: 1.3rem
+                }
+            }
+        }
+    }

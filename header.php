@@ -25,11 +25,11 @@
 			<!-- Icons & Favicons -->
 			<link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.png">
 			<link href="<?php echo get_template_directory_uri(); ?>/assets/images/apple-icon-touch.png" rel="apple-touch-icon" />	
-	    
+			<link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/assets/styles/style.css'?>">
 		<?php } ?>
 		<script src="https://unpkg.com/scrollreveal"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="<?php echo get_template_directory_uri() . '/assets/scripts/js/script.js'?>" defer></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<?php wp_head(); ?>
@@ -37,10 +37,10 @@
 	</head>
 			<header>
 				<nav id="menu" class="navbar navbar-expand-lg navbar-light bg-light fixed-top justify-content-between">
-					<a href="<?php get_home_url()?>" class="navbar-brand d-none  d-lg-inline">
+					<a href="<?php echo get_site_url()?>" class="navbar-brand d-none  d-lg-inline">
 						<img src="https://www.trivenetoassicura.it/wp-content/themes/triveneto-theme/media/logo-triveneto-assicura.svg" alt="">
 					</a>
-					<a href="<?php get_home_url()?>" class="navbar-brand d-inline d-lg-none">
+					<a href="<?php echo get_site_url()?>" class="navbar-brand d-inline d-lg-none">
 						<img src="https://www.trivenetoassicura.it/wp-content/themes/triveneto-theme/media/logo-triveneto-sm.svg" alt="">
 					</a>
 					<button id="ham-btn" class="navbar-toggler menu-toggler" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
